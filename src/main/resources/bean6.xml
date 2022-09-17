@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--  提取 list 集合类型属性注入-->
+    <!--
+    1）在 spring 配置文件中引入名称空间 util
+    xmlns:util="http://www.springframework.org/schema/util"
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    2)使用 util 标签完成 list 集合注入提取
+
+    -->
+    <util:list id="bookTest">
+        <value>白夜行</value>
+        <value>天方夜谭</value>
+        <value>我和僵尸有个约会</value>
+
+    </util:list>
+    <!--  3)提取list集合类型属性注入使用-->
+    <bean id="book" class="com.atguigu2.collectiontype.Book">
+        <property name="booList" ref="bookTest"></property>
+
+    </bean>
+
+</beans>
