@@ -43,9 +43,9 @@ public class TXConfig {
 
     //创建事务管理器
     @Bean
-    public DataSourceTransactionManager getDataSourceTransactionManager(DataSource dataSource) {
-        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
-        dataSourceTransactionManager.setDataSource(dataSource);
-        return dataSourceTransactionManager;
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+        transactionManager.setDataSource(dataSource);
+        return transactionManager;
     }
 }

@@ -452,5 +452,36 @@ return transactionManager;
  }
 }
 
+Spring5 框架新功能
+Spring 5.0 框架自带了通用的日志封装
+（1）Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+（2）Spring5 框架整合 Log4j2
 
+Spring5 框架核心容器支持@Nullable 注解
+（1）@Nullable 注解可以使用在方法上面，属性上面，参数上面，表示方法返回可以为空，属性值可以
+为空，参数值可以为空
 
+Spring5 核心容器支持函数式风格 GenericApplicationContext
+
+Spring5 框架新功能（Webflux）
+1、SpringWebflux 介绍
+（1）是 Spring5 添加新的模块，用于 web 开发的，功能和 SpringMVC 类似的，Webflux 使用
+当前一种比较流程响应式编程出现的框架
+（2）使用传统 web 框架，比如 SpringMVC，这些基于 Servlet 容器，Webflux 是一种异步非阻
+塞的框架，异步非阻塞的框架在 Servlet3.1 以后才支持，核心是基于 Reactor 的相关 API 实现
+的。
+（3）解释什么是异步非阻塞
+* 异步和同步
+* 非阻塞和阻塞
+  ** 上面都是针对对象不一样
+  ** 异步和同步针对调用者，调用者发送请求，如果等着对方回应之后才去做其他事情就是同
+  步，如果发送请求之后不等着对方回应就去做其他事情就是异步
+  ** 阻塞和非阻塞针对被调用者，被调用者受到请求之后，做完请求任务之后才给出反馈就是阻
+  塞，受到请求之后马上给出反馈然后再去做事情就是非阻塞
+（4）Webflux 特点：
+  第一 非阻塞式：在有限资源下，提高系统吞吐量和伸缩性，以 Reactor 为基础实现响应式编程
+  第二 函数式编程：Spring5 框架基于 java8，Webflux 使用 Java8 函数式编程方式实现路由请求
+
+（5）比较 SpringMVC
+第一 两个框架都可以使用注解方式，都运行在 Tomet 等容器中
+第二 SpringMVC 采用命令式编程，Webflux 采用异步响应式编程

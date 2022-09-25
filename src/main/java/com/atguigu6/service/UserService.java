@@ -1,7 +1,9 @@
 package com.atguigu6.service;
 
 import com.atguigu6.dao.UserDao;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -18,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
     //注入dao
     @Autowired
+
+
     private UserDao userDao;
 
     public void accountMoney() {

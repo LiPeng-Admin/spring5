@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestUserAccount {
     @Test
     public void test() throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean13.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean14.xml");
         UserService userService = context.getBean("userService", UserService.class);
         System.out.println(userService);
         userService.accountMoney();
@@ -28,5 +28,6 @@ public class TestUserAccount {
         System.out.println(userService);
         userService.accountMoney();
     }
+
 
 }
